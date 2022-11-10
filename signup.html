@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="C:\Users\rahul\Desktop\evil-burst-477\signup_login.css">
+</head>
+
+<body>
+    <h1>Sign up</h1>
+    <form>
+        <div>
+        <img src="C:\Users\rahul\Downloads\new_logo.png" alt="logo">
+        <h1>Angel Service</h1>
+    </div>
+        <label>Company Name</label>
+        <br>
+        <input type="text" id="name" placeholder="enter your company name">
+        <br>
+        <label>Email Address</label>
+        <br>
+        <input type="email" id="email" placeholder="enter email address">
+        <br>
+        <label>Password</label>
+        <br>
+        <input type="text" id="password" placeholder="enter password">
+        <br>
+        <input type="submit" id="submit">
+        <a href="C:\Users\rahul\Desktop\evil-burst-477\login.html" id="login"></a>
+    </form>
+
+</body>
+
+</html>
+
+<script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit", save_data)
+    let signup = JSON.parse(localStorage.getItem("signup_data")) || [];
+
+    function save_data(ele) {
+        ele.preventDefault();
+        let data = {
+            name: form.name.value,
+            email: form.email.value,
+            password: form.password.value
+        }
+        if (data.name == "" || data.email == "" || data.password == "") {
+            alert("Please fill all the details");
+        }
+        else {
+            let present = "no"
+            signup.forEach(function (element) {
+                if (element.email == data.email) {
+                    present = "yes"
+                }
+            });
+            if (present == "yes") {
+                alert("Email already registered");
+                return;
+            }
+            signup.push(data);
+            localStorage.setItem("signup_data", JSON.stringify(signup))
+            document.querySelector("#login").innerHTML = "login"
+        }
+
+    }
+</script>

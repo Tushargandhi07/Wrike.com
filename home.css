@@ -1,6 +1,7 @@
 #nav>img {
     width: 50px;
     margin-right: -50px;
+    border-radius: 50%;
 }
 
 h2 {
@@ -15,14 +16,20 @@ h3{
     text-align: center;
     color: rgb(156, 152, 152);
 }
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
 
 #nav {
-    margin-top: -10px;
+    margin-top: -20px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     display: flex;
     justify-content: space-evenly;
     border: 1px solid rgb(13, 13, 63);
     background-color: rgb(13, 13, 63);
+    position: sticky;
+    top: 0px;
 }
 
 #nav>a {
@@ -31,6 +38,25 @@ h3{
     font-size: 25px;
     color: white;
     text-decoration: none;
+}
+#dropdown_why{
+    display: none;
+}
+#why:hover #dropdown_why{
+    
+    display: flex;
+    position: absolute;
+    top:100%;
+    background-color: black;
+    /* left: 30; */
+}
+#dropdown_why ul{
+    display: block;
+}
+#dropdown_why ul li{
+    padding: 10px;
+    align-items: center;
+    margin-right: 10px;
 }
 
 #heading {

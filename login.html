@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="signup_login.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form>
+        <div>
+            <img src="C:\Users\rahul\Downloads\new_logo.png" alt="logo">
+            <h1>Angel Service</h1>
+        </div>
+        <label>Email Address</label>
+        <br>
+        <input type="email" id="email" placeholder="enter email address">
+        <br>
+        <label>Password</label>
+        <br>
+        <input type="text" id="password" placeholder="enter password">
+        <br>
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
+
+<script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit",login);
+    let signup_data= JSON.parse(localStorage.getItem("signup_data"))||[];
+
+    function login(ele){
+        ele.preventDefault();
+        let data={
+            email: form.email.value,
+            password: form.password.value
+        }
+        let result="No"
+        signup_data.forEach(function(ele){
+            if(data.email==ele.email && data.password==ele.password){
+                result="Yes"
+            }
+        });
+        if(result=="Yes"){
+            alert("login successful");
+            window.location.assign("home.html")
+        }
+        else{
+            alert("Wrong email or password.");
+        }
+    }
+</script>
