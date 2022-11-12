@@ -41,14 +41,15 @@ let container = document.querySelector("#container")
     }
 
     function addtocart(data) {
-        let cart = JSON.parse(localStorage.getItem("cartData")) || [];
+        let cart = [];
         for (let i = 0; i < cart.length; i++) {
             if (cart[i].department == data.department) {
-                alert("Already in cart");
+                alert("Plan is already added");
                 return;
             }
         }
         cart.push(data);
         localStorage.setItem("cartData", JSON.stringify(cart));
-        alert("Plan added to cart");
+        alert("Plan added");
+        window.location.assign("activate.html")
     }

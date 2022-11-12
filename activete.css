@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(239, 246, 248);
+}
+#container>div {
+    background-color: white;
+    width: 15%;
+    border: 3px solid rgb(175, 174, 174);
+    border-radius: 15px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+form{
+    background-color: white;
+    text-align: center;
+    border: 1px solid red;
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+    border: 3px solid rgb(175, 174, 174);
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+form>h3{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+#email,#password{
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+#submit{
+    background-color: rgb(18, 161, 18);
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 10px 40px;
+}
