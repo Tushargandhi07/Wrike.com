@@ -1,3 +1,7 @@
+*{
+    font-family: "Roborto", sans-serif;;
+}
+
 #nav>img {
     width: 50px;
     margin-right: -50px;
